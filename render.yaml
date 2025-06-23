@@ -1,7 +1,8 @@
 services:
   - type: web
     name: thought-healer
-    runtime: java
-    buildCommand: mvn clean install
-    startCommand: java -cp target/thought-healer-1.0.jar com.thoughthealer.App
+    env: docker
     plan: free
+    region: oregon
+    branch: main
+    rootDir: .   # or specify if your code is in a subfolder
