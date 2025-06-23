@@ -1,0 +1,7 @@
+services
+  - type web
+    name thought-healer
+    env java
+    buildCommand mvn clean install
+    startCommand java -cp targetthought-healer-1.0.jar com.thoughthealer.App
+    plan free
