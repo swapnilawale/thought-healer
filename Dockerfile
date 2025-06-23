@@ -14,4 +14,4 @@ RUN mvn clean package
 ENV PORT=8080
 
 # Start the Java app
-CMD ["java", "-jar", "target/thought-healer-1.0-shaded.jar"]
+CMD ["java", "-jar", "target/thought-healer-1.0.jar"]
