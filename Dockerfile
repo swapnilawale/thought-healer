@@ -1,17 +1,17 @@
-# Use official Java image
-FROM openjdk:21-jdk
+# ✅ Use a base image that has both Java and Maven
+FROM maven:3.9.6-eclipse-temurin-21
 
 # Set working directory
 WORKDIR /app
 
-# Copy everything
+# Copy all project files
 COPY . .
 
-# Install Maven and build the project
-RUN apt-get update && apt-get install -y maven && mvn clean package
+# Build the app
+RUN mvn clean package
 
-# Read port from environment
+# Expose the port Render sets
 ENV PORT=8080
 
-# Run the app
+# Start the Java app
 CMD ["java", "-cp", "target/thought-healer-1.0.jar", "com.thoughthealer.App"]
