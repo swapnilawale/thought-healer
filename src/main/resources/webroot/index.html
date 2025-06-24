@@ -375,7 +375,26 @@
       75% { content: '...'; }
       100% { content: ''; }
     }
+    
+    /* Ensure the SVG scales properly */
+#brain-visualization {
+  width: 100%; /* Make it responsive */
+  height: auto; /* Maintain aspect ratio */
+}
 
+/* Adjust the interactive elements */
+.absolute.bottom-4 {
+  left: 10px; /* Adjust for smaller screens */
+  right: 10px; /* Adjust for smaller screens */
+  flex-direction: column; /* Stack elements vertically on small screens */
+  align-items: center; /* Center align */
+}
+
+@media (max-width: 600px) {
+  .absolute.bottom-4 {
+    bottom: 2rem; /* Adjust spacing for smaller screens */
+  }
+}
 
 
    
@@ -486,9 +505,13 @@
         <div class="th-card-face th-card-back">
           <img src="card1.jpeg" alt="Calm breathing" class="th-card-back-image">
           <div class="th-card-buttons">
-            <button class="th-card-btn"><i class="fas fa-download"></i> Download</button>
-            <button class="th-card-btn"><i class="fas fa-list"></i> Features</button>
-            <button class="th-card-btn"><i class="fas fa-tag"></i> Pricing</button>
+          <button class="th-card-btn"><i class="fas fa-download"></i> Download</button>
+            <a href="#features">
+              <button class="th-card-btn"><i class="fas fa-list"></i> Features</button>
+           </a>            
+            <a href="#pricing">
+              <button class="th-card-btn"><i class="fas fa-tag"></i> Pricing</button>
+            </a>
           </div>
         </div>
       </div>
@@ -510,8 +533,12 @@
           <img src="card2.jpeg" alt="Support network" class="th-card-back-image">
           <div class="th-card-buttons">
             <button class="th-card-btn"><i class="fas fa-download"></i> Download</button>
-            <button class="th-card-btn"><i class="fas fa-list"></i> Features</button>
-            <button class="th-card-btn"><i class="fas fa-tag"></i> Pricing</button>
+            <a href="#features">
+              <button class="th-card-btn"><i class="fas fa-list"></i> Features</button>
+            </a>
+            <a href="#pricing">
+              <button class="th-card-btn"><i class="fas fa-tag"></i> Pricing</button>
+            </a>
           </div>
         </div>
       </div>
@@ -533,8 +560,12 @@
           <img src="card3.jpeg" alt="Meditation" class="th-card-back-image">
           <div class="th-card-buttons">
             <button class="th-card-btn"><i class="fas fa-download"></i> Download</button>
-            <button class="th-card-btn"><i class="fas fa-list"></i> Features</button>
-            <button class="th-card-btn"><i class="fas fa-tag"></i> Pricing</button>
+            <a href="#features">
+  <button class="th-card-btn"><i class="fas fa-list"></i> Features</button>
+</a>            
+<a href="#pricing">
+  <button class="th-card-btn"><i class="fas fa-tag"></i> Pricing</button>
+</a>
           </div>
         </div>
       </div>
@@ -556,8 +587,13 @@
           <img src="card4.jpeg" alt="Sleep" class="th-card-back-image">
           <div class="th-card-buttons">
             <button class="th-card-btn"><i class="fas fa-download"></i> Download</button>
-            <button class="th-card-btn"><i class="fas fa-list"></i> Features</button>
-            <button class="th-card-btn"><i class="fas fa-tag"></i> Pricing</button>
+            <a href="#features">
+  <button class="th-card-btn"><i class="fas fa-list"></i> Features</button>
+</a>
+
+            <a href="#pricing">
+              <button class="th-card-btn"><i class="fas fa-tag"></i> Pricing</button>
+            </a>
           </div>
         </div>
       </div>
@@ -600,10 +636,10 @@
              <!-- <span class="block text-dark-900 dark:text-white">Healthy Living</span> -->
               <span class="gradient-text text-transparent bg-clip-text">Healthy Living</span>
             </h1>
-  <!--
+ 
             <p class="text-dark-600 dark:text-dark-300 text-lg md:text-xl mb-8 max-w-xl">
               Experience a revolutionary approach to mental health through immersive technology and compassionate care.
-            </p>  -->
+            </p>  
 
             <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
               <a href="#contact" class="group relative overflow-hidden rounded-full bg-gradient-to-r from-primary-500 to-secondary-500 dark:from-primary-400 dark:to-secondary-400 px-8 py-4 font-medium text-white shadow-lg transition-all duration-300 hover:shadow-primary-500/25 dark:hover:shadow-primary-400/25">
@@ -674,6 +710,9 @@
                       </defs>
                     </svg>
 
+
+                      <div class="relative h-full w-full">
+                <div id="brain-visualization" class="absolute inset-0 flex items-center justify-center">
                     <!-- Animated brain outline -->
                     <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" class="absolute inset-0 w-full h-full opacity-30">
                       <path d="M200,100 C260,60 320,80 350,130 C380,180 360,250 320,280 C280,310 240,300 200,290 C160,300 120,310 80,280 C40,250 20,180 50,130 C80,80 140,60 200,100 Z"
@@ -691,18 +730,17 @@
                         </linearGradient>
                       </defs>
                     </svg>
+                    </div>
                   </div>
                 </div>
 
                 <!-- Interactive elements -->
-                <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
-                  <div class="text-xs text-white/70">Neural activity visualization</div>
-                  <div class="flex space-x-2">
-                    <div class="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></div>
-                    <div class="w-2 h-2 rounded-full bg-secondary-400 animate-pulse" style="animation-delay: 0.5s;"></div>
-                    <div class="w-2 h-2 rounded-full bg-primary-400 animate-pulse" style="animation-delay: 1s;"></div>
-                  </div>
-                </div>
+          <div class="absolute bottom-4 left-4 right-4 flex justify-between items-center">
+              <div class="text-xs text-white/70">Neural activity visualization</div>
+              <div class="flex space-x-2">
+                <div class="w-2 h-2 rounded-full bg-primary-400 animate-pulse"></div>
+                <div class="w-2 h-2 rounded-full bg-secondary-400 animate-pulse" style="animation-delay: 0.5s;"></div>
+                <div class="w-2 h-2 rounded-full bg-primary-400 animate-pulse" style="animation-delay: 1s;"></div>
               </div>
             </div>
           </div>
